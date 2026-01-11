@@ -7,11 +7,11 @@
 
                 <h3 class="text-center mb-4 fw-bold">Login</h3>
 
-                <c:if test="${not empty error}">
-                                    <div class="alert alert-danger text-center">
-                                        ${error}
-                                    </div>
-                                </c:if>
+                <c:if test="${param.error != null}">
+                    <div class="alert alert-danger text-center">
+                        Invalid username or password
+                    </div>
+                </c:if>
 
                 <form method="post" action="/login">
                     <label class="form-label fw-semibold">Username</label>
@@ -20,7 +20,7 @@
                     <label class="form-label fw-semibold">Password</label>
                     <input type="password" name="password" class="form-control" required />
 
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
                 </form>
 
 
