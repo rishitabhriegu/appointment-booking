@@ -4,6 +4,7 @@ import com.appointment.bookAppointment.enums.AppointmentStatus;
 import com.appointment.bookAppointment.repository.RequestRepository;
 import com.appointment.bookAppointment.entity.Requests;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,12 +28,14 @@ public class RequestService {
         repository.save(request);
     }
 
+    @Transactional
     public void approveRequest(String id) {
 
         Requests request = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Request not found"));
 
         request.setStatus(AppointmentStatus.APPROVED);
+
         repository.save(request);
 
         emailService.sendEmail(

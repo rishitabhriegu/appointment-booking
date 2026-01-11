@@ -10,6 +10,7 @@
 				<th>Email</th>
 				<th>Date</th>
 				<th>Time</th>
+				<th>Status</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -22,6 +23,7 @@
 					<td>${requests.email}</td>
 					<td>${requests.date}</td>
 					<td>${requests.time}</td>
+					<td>${requests.status}</td>
 
 					<td>
                         <c:if test="${requests.status == 'PENDING'}">

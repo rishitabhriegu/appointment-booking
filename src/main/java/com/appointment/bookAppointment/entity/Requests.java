@@ -1,24 +1,24 @@
 package com.appointment.bookAppointment.entity;
 
 import com.appointment.bookAppointment.enums.AppointmentStatus;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
 public class Requests {
+
     @Id
     private String id;
+
     private String username;
     private String email;
     private LocalDate date;
     private LocalTime time;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private AppointmentStatus status;
 
     public Requests() {
@@ -38,7 +38,7 @@ public class Requests {
     }
 
     public void setStatus(AppointmentStatus status) {
-        status = status;
+        this.status = status;
     }
 
     public String getId() {

@@ -17,12 +17,12 @@ public class AdminController {
     @PostMapping("/approve/{id}")
     public String approve(@PathVariable String id) {
         requestService.approveRequest(id);
-        return "redirect:/all-requests";
+        return "redirect:/requests";
     }
 
     @PostMapping("/reject/{id}")
     public String reject(@PathVariable String id) {
         requestService.rejectRequest(id);
-        return "redirect:/all-requests";
+        return "redirect:/requests";
     }
 }

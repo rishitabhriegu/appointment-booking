@@ -36,7 +36,11 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers
+                        .frameOptions(frame -> frame.disable())
+                )
                 .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers("/login", "/css/**", "/js/**").permitAll()
                         .requestMatchers("/requests/**").hasRole("ADMIN")
                         .requestMatchers("/appointment-booking/**").authenticated()
