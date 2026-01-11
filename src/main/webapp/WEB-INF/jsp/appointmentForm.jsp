@@ -27,7 +27,29 @@
 
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Select Time</label>
-                        <input type="time" name="time" class="form-control" required />
+                        <select name="time" class="form-select" required>
+                                <option value="">-- Select Slot --</option>
+
+                                <!-- Morning -->
+                                <option value="10:00">10:00 - 10:30</option>
+                                <option value="10:30">10:30 - 11:00</option>
+                                <option value="11:00">11:00 - 11:30</option>
+                                <option value="11:30">11:30 - 12:00</option>
+
+                                <!-- Afternoon -->
+                                <option value="12:00">12:00 - 12:30</option>
+                                <option value="12:30">12:30 - 1:00</option>
+                                <option value="13:00">1:00 - 1:30</option>
+                                <option value="13:30">1:30 - 2:00</option>
+
+                                <!-- Lunch break skipped: 2:00 - 3:00 -->
+
+                                <!-- Evening -->
+                                <option value="15:00">3:00 - 3:30</option>
+                                <option value="15:30">3:30 - 4:00</option>
+                                <option value="16:00">4:00 - 4:30</option>
+                                <option value="16:30">4:30 - 5:00</option>
+                            </select>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">

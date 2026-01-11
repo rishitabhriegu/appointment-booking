@@ -48,7 +48,7 @@ public class AppointmentFormController {
         requestService.saveRequest(request);
 
         redirectAttributes.addFlashAttribute(
-                "status", "Appointment Pending ⏳"
+                "status", "Appointment Pending ⏳- You will receive email notification!"
         );
 
         return "redirect:/appointment-booking";
